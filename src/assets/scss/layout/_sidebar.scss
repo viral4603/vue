@@ -1,0 +1,84 @@
+.sidebar {
+    flex-basis: 250px;
+    transition: 0.4s all;
+
+    .menu {
+        display: block;
+        cursor: pointer;
+        transition: 0.4s all;
+    }
+
+    .nav-link {
+        white-space: nowrap;
+    }
+
+    .brand-title {
+        transition: 0.4s all;
+    }
+
+    .nav-text {
+        display: inline-block;
+        transition: 0.4s all;
+        transform: translateX(0px);
+    }
+
+    .sub-nav {
+        .nav-item {
+            display: none;
+            height: 0;
+            transition: all 0.4s;
+        }
+    }
+    .router-link-active + .sub-nav {
+        .nav-item {
+            display: block;
+            height: fit-content;
+        }
+    }
+}
+
+.nav-link {
+    transition: all 0.4s;
+    // background-color: $secondary;
+    &:hover {
+        color: $secondary !important;
+    }
+    &.router-link-active.router-link-exact-active{
+        color: $secondary !important;
+    }
+}
+.categories-item {
+    color: $white !important;
+}
+
+//shirnk navbar on menu click
+#close-menu:checked+.sidebar {
+    flex-basis: 70px
+}
+
+#close-menu:checked+.sidebar {
+    .brand-title {
+        transform: translateX(-140px);
+    }
+
+    .menu {
+        transform: translateX(-100px)
+    }
+
+    .nav-text {
+        transform: translateX(140px);
+    }
+}
+
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.4s ease-out;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
+.card {
+    cursor: pointer;
+}

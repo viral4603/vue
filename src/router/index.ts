@@ -1,20 +1,27 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import AppCell from '../components/app-cell.vue'
+import PageNotFound from '@/components/page-not-found.vue'
+import productRoute from '@/product/route/product.route'
+
+//Appcell routing
+const appCellRoute = [
+  {
+    path: 'home',
+    component: () => import(/* webpackChunkName: "ProductList" */ "@/product/components/product-list-container/product-list.presentation.vue"
+    )
+  },
+  ...productRoute,
+  { path: "/:pathMatch(.*)*", name: "PageNotFound", component: PageNotFound },
+]
 
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
-    name: 'home',
-    component: HomeView
+    name: 'default',
+    component: AppCell,
+    children: appCellRoute
   },
-  {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
-  }
+  // { path: "/:pathMatch(.*)*", name: "PageNotFound", component: PageNotFound },
 ]
 
 const router = createRouter({

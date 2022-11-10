@@ -1,0 +1,96 @@
+{
+    "products": [
+        {
+            "id": 1,
+            "title": "iPhone 9",
+            "description": "An apple mobile which is nothing like apple",
+            "price": 549,
+            "discountPercentage": 12.96,
+            "rating": 4.69,
+            "stock": 94,
+            "brand": "Apple",
+            "category": "electronics"
+          },
+          {
+            "id": 2,
+            "title": "iPhone 13",
+            "description": "An apple mobile which is nothing like apple",
+            "price": 549,
+            "discountPercentage": 12.96,
+            "rating": 4.69,
+            "stock": 94,
+            "brand": "Apple",
+            "category": "electronics"
+          },
+          {
+            "id": 2,
+            "title": "iPhone 9",
+            "description": "An apple mobile which is nothing like apple",
+            "price": 549,
+            "discountPercentage": 12.96,
+            "rating": 4.69,
+            "stock": 94,
+            "brand": "Apple",
+            "category": "home-and-furniture"
+          },
+        {
+            "id": 4,
+            "title": "iPhone 9",
+            "description": "An apple mobile which is nothing like apple",
+            "price": 549,
+            "discountPercentage": 12.96,
+            "rating": 4.69,
+            "stock": 94,
+            "brand": "Apple",
+            "category": "home-and-furniture"
+          },
+          {
+            "id": 5,
+            "title": "iPhone 13",
+            "description": "An apple mobile which is nothing like apple",
+            "price": 549,
+            "discountPercentage": 12.96,
+            "rating": 4.69,
+            "stock": 94,
+            "brand": "Apple",
+            "category": "men"
+          },
+          {
+            "id": 6,
+            "title": "iPhone 9",
+            "description": "An apple mobile which is nothing like apple",
+            "price": 549,
+            "discountPercentage": 12.96,
+            "rating": 4.69,
+            "stock": 94,
+            "brand": "Apple",
+            "category": "women"
+          }
+    ],
+    "categories":[
+      {
+        "name":"Electronics",
+        "routeName":"electronics"
+      },
+      {
+        "name":"TVs & Appliances",
+        "routeName":"tvs-and-appliances"
+      },
+      {
+        "name":"Men",
+        "routeName":"men"
+      },
+      {
+        "name":"Women",
+        "routeName":"women"
+      },
+      {
+        "name":"Home & Furniture",
+        "routeName":"home-and-furniture"
+      },
+      {
+        "name":"Sports, Books & More",
+        "routeName":"sports-books-and-more"
+      }
+    ]
+}
