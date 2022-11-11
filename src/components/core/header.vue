@@ -27,6 +27,12 @@
               </router-link>
             </li>
           </ul>
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+             <li class="nav-item fw-bold">
+              <span class="icon-cart fs-4"></span>
+              Cart<span class="cart-items ms-2">{{getCartItemsCount}}</span>
+             </li>
+          </ul>
           <form class="d-flex" role="search">
             <input
               class="form-control me-2"
@@ -77,10 +83,13 @@ export default defineComponent({
   },
   methods:{
     setRoute(){
-      debugger
       productStore.dispatch('setCurrentRoute',this.$route.name)
-
       console.log(productStore.getters.getCurrentRouteName)
+    }
+  },
+  computed:{
+    getCartItemsCount() {
+      return productStore.getters.getCart.length
     }
   }
 });

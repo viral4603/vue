@@ -1,0 +1,152 @@
+@import "variables";
+
+@font-face {
+  font-family: '#{$icomoon-font-family}';
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?7act71');
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?7act71#iefix') format('embedded-opentype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?7act71') format('truetype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?7act71') format('woff'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?7act71##{$icomoon-font-family}') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: '#{$icomoon-font-family}' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-Right {
+  &:before {
+    content: $icon-Right;     
+    color: #4baf89;
+  }
+}
+.icon-Send-Note {
+  &:before {
+    content: $icon-Send-Note;     
+    color: #e97200;
+  }
+}
+.icon-bell-active .path1 {
+  &:before {
+    content: $icon-bell-active-path1;  
+    color: rgb(30, 36, 48);
+  }
+}
+.icon-bell-active .path2 {
+  &:before {
+    content: $icon-bell-active-path2;  
+    margin-left: -1em;  
+    color: rgb(233, 114, 0);
+  }
+}
+.icon-bell-active .path3 {
+  &:before {
+    content: $icon-bell-active-path3;  
+    margin-left: -1em;  
+    color: rgb(255, 255, 255);
+  }
+}
+.icon-search {
+  &:before {
+    content: $icon-search; 
+  }
+}
+.icon-calender {
+  &:before {
+    content: $icon-calender; 
+  }
+}
+.icon-download {
+  &:before {
+    content: $icon-download; 
+  }
+}
+.icon-upload {
+  &:before {
+    content: $icon-upload; 
+  }
+}
+.icon-delete {
+  &:before {
+    content: $icon-delete; 
+  }
+}
+.icon-edit {
+  &:before {
+    content: $icon-edit; 
+  }
+}
+.icon-setting {
+  &:before {
+    content: $icon-setting; 
+  }
+}
+.icon-bell {
+  &:before {
+    content: $icon-bell; 
+  }
+}
+.icon-sort-down {
+  &:before {
+    content: $icon-sort-down; 
+  }
+}
+.icon-sort-up {
+  &:before {
+    content: $icon-sort-up; 
+  }
+}
+.icon-tick {
+  &:before {
+    content: $icon-tick; 
+  }
+}
+.icon-info-fill {
+  &:before {
+    content: $icon-info-fill; 
+  }
+}
+.icon-copy {
+  &:before {
+    content: $icon-copy; 
+  }
+}
+.icon-tick-fill {
+  &:before {
+    content: $icon-tick-fill; 
+  }
+}
+.icon-cart {
+  &:before {
+    content: $icon-cart; 
+  }
+}
+.icon-eye {
+  &:before {
+    content: $icon-eye; 
+  }
+}
+.icon-heart1 {
+  &:before {
+    content: $icon-heart1; 
+  }
+}
+.icon-heart {
+  &:before {
+    content: $icon-heart; 
+  }
+}
+

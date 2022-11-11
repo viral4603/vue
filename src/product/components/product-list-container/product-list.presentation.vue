@@ -1,6 +1,6 @@
 <template>
 <!-- <span class="d-none">{{getRoute}}</span> -->
-
+    {{getCurrentRouteName}}
     <ProductListPresentation :productList=productList>
     </ProductListPresentation>
 </template>
@@ -14,27 +14,28 @@ export default defineComponent({
         ProductListPresentation
     },
     data() {
-        const routeName = this.$route.name
         return {
             productList:[] as any,
-            routeName
         }
     },
     created() {
         productService.getProductList().then((res:any)=>{
             this.productList = res.data;
         })
-        console.log(productStore.state.currrentRouteName)
     },
     computed:{
-        getCurrentRouteName() {
-            // if(productStore.getters.getCurrentRouteName){
-            //     productService.getCategoryViseProduct(this.$route.name).then((res:any)=>{
-            //         this.productList = res.data;
-            //     })
-            // }
-            debugger
-            return productStore.getters.getCurrentRouteName
+        getUpdatedRouteName() {
+            return this.$route.path;
+        }
+    },
+    watch:{
+        getUpdatedRouteName(newVal) {
+            newVal = newVal.replace(/\/+/g,'')
+            if(newVal){
+                productService.getCategoryViseProduct(newVal).then((res:any)=>{
+                    this.productList = res.data;
+                })
+            }
         }
     }
 

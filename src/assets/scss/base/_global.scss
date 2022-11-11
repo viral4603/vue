@@ -7,3 +7,12 @@ html,body{
 .cursor-pointer {
     cursor: pointer;
 }
+
+.cart-icons{
+    top: 10px;
+    right: 10px;
+    font-size: 1.125rem;
+    .icon-cart.added{
+        color: $danger;
+    }
+}

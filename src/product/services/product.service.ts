@@ -15,6 +15,7 @@ class ProductService {
 
     //get categories vise product 
     getCategoryViseProduct(cat:any) {
+        cat.replace(/-/g, "")
         return Http.get(`${url}products?category=${cat}`)
     }
 }
