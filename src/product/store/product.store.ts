@@ -14,6 +14,9 @@ const productStore = new Vuex.Store({
         ADD_CART_ITEMS(state,value) {
             state.cartItems.push(value);
         },
+        REMOVE_CART_ITEMS(state,value) {
+            state.cartItems.splice(value,1);
+        },
         ADD_FAVOURITE_ITEMS(state,value) {
             state.favouriteItems.push(value)
         },
@@ -44,6 +47,9 @@ const productStore = new Vuex.Store({
         },
         ["removeFromFavourite"]({ commit }, value) {
             commit("REMOVE_FAVOURITE_ITEMS",value)
+        },
+        ["removeItemFromCart"]({ commit }, value) {
+            commit("REMOVE_CART_ITEMS",value)
         }
     },
 });

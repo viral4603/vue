@@ -2,7 +2,10 @@
 <!-- product-card-start -->
   <div class="card position-relative">
     <div class="icons position-absolute cart-icons">
-      <span class="icon-cart fs-5" 
+      <span class="icon-delete" @click="removeItemFromCart(item.id)" v-if="isCartView ? true : false">
+
+      </span>
+      <span class="icon-cart fs-5 ms-2" 
        :class="[getCartItems.includes(item?.id) ? 'added' : '' ]"
        :title="[getCartItems.includes(item?.id) ? 'already into cart' : 'add to the cart']"
         @click="addToCart(item.id)"></span>
@@ -31,27 +34,37 @@ export default defineComponent({
   props:{
     item:{
         required: true
+    },
+    isCartView:{
+      required:true
     }
   },
+  emits:[
+    "addItemTocart",
+    "removeCartItem"
+  ],
   methods:{
-    //add item to cart
+    //add item to cart emit id to parent
     addToCart(id:any) {
-      if(!productStore.getters.getCart.includes(id)){
-        productStore.dispatch("addItemsTocart",id)
-      }
-      else {
-        alert ('items already addeed to the cart')        
-      }
+      this.$emit("addItemTocart",id)
     },
+
     //add items to favourite
     addTOfaviourite(id:any) {
       if(!productStore.getters.getFavouriteItems.includes(id)){
         productStore.dispatch("addItemsToFavouirite",id)
       }
       else{
-        let findIndex = productStore.getters.getFavouriteItems.findIndex((ele:any) => ele === id);
+        let findIndex = this.findCartItemIndex(id)
         productStore.dispatch("removeFromFavourite",findIndex)
       }
+    },
+    //removeItems from cart
+    removeItemFromCart(id:any) {
+      this.$emit("removeCartItem",id)     
+    },
+    findCartItemIndex(id:any){
+      return productStore.getters.getFavouriteItems.findIndex((ele:any) => ele === id);
     }
   },
   computed:{
@@ -60,7 +73,7 @@ export default defineComponent({
     },
     getFavouriteItems(){
       return productStore.getters.getFavouriteItems
-    }
+    },
   }
 });
 </script>

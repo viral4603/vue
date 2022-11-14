@@ -1,43 +1,51 @@
 <template>
-<!-- <span class="d-none">{{getRoute}}</span> -->
-    {{getCurrentRouteName}}
-    <ProductListPresentation :productList=productList>
-    </ProductListPresentation>
+  <!-- <span class="d-none">{{getRoute}}</span> -->
+  {{ getCurrentRouteName }}
+  <ProductListPresentation :productList="productList" @addTocart="addItemsTocart($event)">
+  </ProductListPresentation>
 </template>
 <script lang="ts">
-import { defineComponent } from 'vue'
-import ProductListPresentation from './product-list-presentation/product-list.presentation.vue'
-import productService from '@/product/services/product.service'
-import productStore from '@/product/store/product.store'
+import { defineComponent } from "vue";
+import ProductListPresentation from "./product-list-presentation/product-list.presentation.vue";
+import productService from "@/product/services/product.service";
+import productStore from "@/product/store/product.store";
 export default defineComponent({
-    components:{
-        ProductListPresentation
+  components: {
+    ProductListPresentation,
+  },
+  data() {
+    return {
+      productList: [] as any,
+    };
+  },
+  created() {
+    productService.getProductList().then((res: any) => {
+      this.productList = res.data;
+    });
+  },
+  computed: {
+    getUpdatedRouteName() {
+      return this.$route.path;
     },
-    data() {
-        return {
-            productList:[] as any,
-        }
+  },
+  watch: {
+    getUpdatedRouteName(newVal) {
+      newVal = newVal.replace(/\/+/g, "");
+      if (newVal) {
+        productService.getCategoryViseProduct(newVal).then((res: any) => {
+          this.productList = res.data;
+        });
+      }
     },
-    created() {
-        productService.getProductList().then((res:any)=>{
-            this.productList = res.data;
-        })
+  },
+  methods: {
+    addItemsTocart(id: any) {
+      if (!productStore.getters.getCart.includes(id)) {
+        productStore.dispatch("addItemsTocart", id);
+      } else {
+        alert("items already addeed to the cart");
+      }
     },
-    computed:{
-        getUpdatedRouteName() {
-            return this.$route.path;
-        }
-    },
-    watch:{
-        getUpdatedRouteName(newVal) {
-            newVal = newVal.replace(/\/+/g,'')
-            if(newVal){
-                productService.getCategoryViseProduct(newVal).then((res:any)=>{
-                    this.productList = res.data;
-                })
-            }
-        }
-    }
-
-})
+  },
+});
 </script>

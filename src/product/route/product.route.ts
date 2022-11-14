@@ -42,6 +42,12 @@ const productRoute = [
         component:() =>import(/* webpackChunkName: "ProductList" */ "@/product/components/product-list-container/product-list.presentation.vue"
           )
     },
+    {
+      path:'cart-list',
+      name:'cart',
+      component:() =>import(/* webpackChunkName: "ProductList" */ "@/cart/cart-list-container/cart-list.container.vue"
+        )
+  },
 ]
 
 export default productRoute

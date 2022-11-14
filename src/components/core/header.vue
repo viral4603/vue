@@ -2,7 +2,7 @@
   <div>
     <nav class="navbar navbar-expand-lg bg-light">
       <div class="container">
-        <a class="navbar-brand" href="#">Navbar</a>
+        <a class="navbar-brand" href="#">MY shopy</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -17,9 +17,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item fw-bold">
-              <router-link :to="'/home'" class="nav-link">
-                Home
-              </router-link>
+              <router-link :to="'/home'" class="nav-link"> Home </router-link>
             </li>
             <li class="nav-item ms-lg-2 mt-1 mt-lg-0 fw-bold">
               <router-link :to="'/product'" class="nav-link">
@@ -28,10 +26,12 @@
             </li>
           </ul>
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-             <li class="nav-item fw-bold">
-              <span class="icon-cart fs-4"></span>
-              Cart<span class="cart-items ms-2">{{getCartItemsCount}}</span>
-             </li>
+            <li class="nav-item fw-bold cursor-pointer">
+              <router-link :to="'/cart-list'" class="nav-link">
+                <span class="icon-cart fs-4"></span>
+                Cart<span class="cart-items ms-2">{{ getCartItemsCount }}</span>
+              </router-link>
+            </li>
           </ul>
           <form class="d-flex" role="search">
             <input
@@ -44,21 +44,28 @@
               Search
             </button>
           </form>
-        </div>      
+        </div>
       </div>
     </nav>
     <!-- categories-nav-start -->
     <nav class="categories navbar navbar-expand-lg mt-2">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0 w-100 justify-content-center">
-            <li class="categories-item ms-lg-2 mt-1 mt-lg-0 fw-bold" v-for="(item,index) in categories" :key="index">
-              <router-link :to="`/${item.routeName}`" class="nav-link" @click="setRoute()">
-                {{item.name}}
-              </router-link>
-            </li>
-        </ul>
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0 w-100 justify-content-center">
+        <li
+          class="categories-item ms-lg-2 mt-1 mt-lg-0 fw-bold"
+          v-for="(item, index) in categories"
+          :key="index"
+        >
+          <router-link
+            :to="`/${item.routeName}`"
+            class="nav-link"
+            @click="setRoute()"
+          >
+            {{ item.name }}
+          </router-link>
+        </li>
+      </ul>
     </nav>
     <!-- categories-nav-end  -->
-
   </div>
 </template>
 <script lang="ts">
@@ -77,20 +84,20 @@ export default defineComponent({
       this.categories = res;
       console.log(this.categories);
     });
-    productService.getCategoryViseProduct('Electronics').then((res:any) => {
-      console.log(res.data)
-    })
+    productService.getCategoryViseProduct("Electronics").then((res: any) => {
+      console.log(res.data);
+    });
   },
-  methods:{
-    setRoute(){
-      productStore.dispatch('setCurrentRoute',this.$route.name)
-      console.log(productStore.getters.getCurrentRouteName)
-    }
+  methods: {
+    setRoute() {
+      productStore.dispatch("setCurrentRoute", this.$route.name);
+      console.log(productStore.getters.getCurrentRouteName);
+    },
   },
-  computed:{
+  computed: {
     getCartItemsCount() {
-      return productStore.getters.getCart.length
-    }
-  }
+      return productStore.getters.getCart.length;
+    },
+  },
 });
 </script>

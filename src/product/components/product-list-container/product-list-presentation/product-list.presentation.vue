@@ -1,8 +1,9 @@
 <template>
  <div class="container">
     <div class="row gy-3">
-        <div class="col-3" v-for="(items,index) in productListData" :key="index">
-            <ProductCard :item=items />
+        <div class="col-12 col-md-3" v-for="(items,index) in productListData" :key="index">
+            <ProductCard :item=items
+            @addItemTocart="addItemTocart($event)" />
         </div>
     </div>
  </div>
@@ -20,6 +21,9 @@ export default defineComponent({
         required:true
     }
    },
+   emits:[
+     "addTocart"
+   ],
    data() {
     return {
         tempdata:{
@@ -33,6 +37,11 @@ export default defineComponent({
         if(newValue) {
             this.productListData = newValue;
         }
+    }
+   },
+   methods:{
+    addItemTocart(id:any) {
+        this.$emit("addTocart",id)
     }
    }
 })
