@@ -10,6 +10,20 @@ const appCellRoute = [
     component: () => import(/* webpackChunkName: "ProductList" */ "@/product/components/product-list-container/product-list.presentation.vue"
     )
   },
+  {
+    path:'/',
+    redirect:'home'
+  },
+  {
+    path:'checkout',
+    name:'checkout',
+    component:() => import(/* webpackChunkName: "CheckoutDeatails" */ "@/checkout/checkout-details-container/checkout-details.container.vue")
+  },
+  {
+    path:'checkout/:id',
+    name:'checkoutwithid',
+    component:() => import(/* webpackChunkName: "CheckoutDeatails" */ "@/checkout/checkout-details-container/checkout-details.container.vue")
+  },
   ...productRoute,
   { path: "/:pathMatch(.*)*", name: "PageNotFound", component: PageNotFound },
 ]

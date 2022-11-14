@@ -3,7 +3,6 @@
   <div class="card position-relative">
     <div class="icons position-absolute cart-icons">
       <span class="icon-delete" @click="removeItemFromCart(item.id)" v-if="isCartView ? true : false">
-
       </span>
       <span class="icon-cart fs-5 ms-2" 
        :class="[getCartItems.includes(item?.id) ? 'added' : '' ]"
@@ -13,13 +12,23 @@
        :class="[getFavouriteItems.includes(item?.id) ? 'icon-heart1 text-danger' : 'icon-heart']" 
        :title="[getFavouriteItems.includes(item?.id) ? 'Already in favourite' : 'Add to favourite']" @click="addTOfaviourite(item.id)"></span>
     </div>
+    <!-- product-image -->
     <img src="../assets/product-images/pexels-photo-90946.jpeg" class="card-img-top" alt="" />
+
     <div class="card-body">
-      <h5 class="card-title">{{ item.title }}</h5>
+      <div class="d-flex justify-content-between">
+        <div class="product-details">
+          <h5 class="fw-bold card-title mb-0 text-secondary">{{ item.title }}</h5> 
+        </div>
+        <div class="price-details">
+          <h6 class="fw-bold text-info">{{ item.sellingPrice }}$</h6>
+          <h6><span class="fw-bold text-decoration-line-through mb-0">{{ item.price }}</span>$ <span class="text-success">{{ Math.round(item.discountPercentage) }}</span>%</h6>
+        </div>
+      </div>
       <p class="card-text">
        {{ item.description }}
       </p>
-      <a href="#" class="btn btn-primary">Buy Now</a>
+      <button class="btn btn-primary" @click="getCheckout(item.id)">Buy Now</button>
     </div>
   </div>
 <!-- product-card-end -->
@@ -63,8 +72,15 @@ export default defineComponent({
     removeItemFromCart(id:any) {
       this.$emit("removeCartItem",id)     
     },
-    findCartItemIndex(id:any){
+    findCartItemIndex(id:any) {
       return productStore.getters.getFavouriteItems.findIndex((ele:any) => ele === id);
+    },
+    //item add to checkout
+    getCheckout(id:any) {
+      if(!productStore.getters.getCart.includes(id)){
+        productStore.dispatch("addItemsTocart",id);
+      }
+      this.$router.push(`checkout/${id}`)
     }
   },
   computed:{
@@ -73,7 +89,7 @@ export default defineComponent({
     },
     getFavouriteItems(){
       return productStore.getters.getFavouriteItems
-    },
+    }
   }
 });
 </script>

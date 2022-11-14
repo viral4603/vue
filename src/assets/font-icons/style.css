@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'font-icons';
-  src:  url('fonts/font-icons.eot?7act71');
-  src:  url('fonts/font-icons.eot?7act71#iefix') format('embedded-opentype'),
-    url('fonts/font-icons.ttf?7act71') format('truetype'),
-    url('fonts/font-icons.woff?7act71') format('woff'),
-    url('fonts/font-icons.svg?7act71#font-icons') format('svg');
+  src:  url('fonts/font-icons.eot?mp11rn');
+  src:  url('fonts/font-icons.eot?mp11rn#iefix') format('embedded-opentype'),
+    url('fonts/font-icons.ttf?mp11rn') format('truetype'),
+    url('fonts/font-icons.woff?mp11rn') format('woff'),
+    url('fonts/font-icons.svg?mp11rn#font-icons') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -25,6 +25,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-heart:before {
+  content: "\e900";
+}
 .icon-Right:before {
   content: "\e983";
   color: #4baf89;
@@ -95,9 +98,24 @@
 .icon-eye:before {
   content: "\e940";
 }
+.icon-plus:before {
+  content: "\e90d";
+}
+.icon-close:before {
+  content: "\e905";
+}
+.icon-close-circle:before {
+  content: "\e912";
+}
+.icon-tick1:before {
+  content: "\e926";
+}
+.icon-minus:before {
+  content: "\e92e";
+}
+.icon-eye1:before {
+  content: "\e941";
+}
 .icon-heart1:before {
   content: "\e904";
-}
-.icon-heart:before {
-  content: "\e900";
 }

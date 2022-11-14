@@ -5,7 +5,8 @@ const productStore = new Vuex.Store({
     state: {
         currrentRouteName: '' as string,
         cartItems:[] as any,
-        favouriteItems:[] as any
+        favouriteItems:[] as any,
+        productList:[] as any
     },
     mutations: {
         SET_ROUTE(state, value) {
@@ -22,6 +23,9 @@ const productStore = new Vuex.Store({
         },
         REMOVE_FAVOURITE_ITEMS(state,value) {
             state.favouriteItems.splice(value,1)
+        },
+        SET_PRODUCT_LIST(state,value) {
+            state.productList = value;
         }
     },
     getters: {
@@ -33,6 +37,9 @@ const productStore = new Vuex.Store({
         },
         getFavouriteItems: (state) => {
             return state.favouriteItems;
+        },
+        getAllProductList: (state) => {
+            return state.productList;
         }
     },
     actions: {
@@ -50,6 +57,9 @@ const productStore = new Vuex.Store({
         },
         ["removeItemFromCart"]({ commit }, value) {
             commit("REMOVE_CART_ITEMS",value)
+        },
+        ["addProductList"]({commit},value) {
+            commit("SET_PRODUCT_LIST",value)
         }
     },
 });

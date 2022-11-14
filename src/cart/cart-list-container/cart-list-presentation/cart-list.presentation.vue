@@ -2,7 +2,7 @@
   <div class="container">
     <div class="heading d-flex justify-content-between align-items-center mb-3">
         <h5 class="text-primary fw-bold mb-0"><span class="icon-cart text-warning"></span> Cart List items </h5>
-        <button type="button" class="btn btn-primary">CheckOut</button>
+        <button type="button" class="btn btn-primary" :disabled="cartList?.length<=0" @click="cartItemsToCheckout()">CheckOut</button>
     </div>
     <div class="row gy-3">
       <div class="col-12 col-md-3" v-for="(items, index) in cartList" :key="index">
@@ -12,7 +12,7 @@
         @addTocart="addToCart($event)"
         @removeCartItem="removeCartItem($event)" />
       </div>
-      <div class="col-12 text-center" v-if="!cartList.length">
+      <div class="col-12 text-center" v-if="!cartList?.length">
         <h4 class="text-secondary">No record found</h4>
       </div>
     </div>
@@ -50,6 +50,9 @@ export default defineComponent({
     },
     removeCartItem(id:any) {
         this.$emit("removeItemFromCart",id)
+    },
+    cartItemsToCheckout() {
+        this.$router.push('checkout')
     }
   }
 });

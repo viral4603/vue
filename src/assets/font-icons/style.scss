@@ -2,11 +2,11 @@
 
 @font-face {
   font-family: '#{$icomoon-font-family}';
-  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?7act71');
-  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?7act71#iefix') format('embedded-opentype'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?7act71') format('truetype'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?7act71') format('woff'),
-    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?7act71##{$icomoon-font-family}') format('svg');
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?mp11rn');
+  src:  url('#{$icomoon-font-path}/#{$icomoon-font-family}.eot?mp11rn#iefix') format('embedded-opentype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.ttf?mp11rn') format('truetype'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.woff?mp11rn') format('woff'),
+    url('#{$icomoon-font-path}/#{$icomoon-font-family}.svg?mp11rn##{$icomoon-font-family}') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -27,6 +27,11 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-heart {
+  &:before {
+    content: $icon-heart; 
+  }
+}
 .icon-Right {
   &:before {
     content: $icon-Right;     
@@ -139,14 +144,39 @@
     content: $icon-eye; 
   }
 }
+.icon-plus {
+  &:before {
+    content: $icon-plus; 
+  }
+}
+.icon-close {
+  &:before {
+    content: $icon-close; 
+  }
+}
+.icon-close-circle {
+  &:before {
+    content: $icon-close-circle; 
+  }
+}
+.icon-tick1 {
+  &:before {
+    content: $icon-tick1; 
+  }
+}
+.icon-minus {
+  &:before {
+    content: $icon-minus; 
+  }
+}
+.icon-eye1 {
+  &:before {
+    content: $icon-eye1; 
+  }
+}
 .icon-heart1 {
   &:before {
     content: $icon-heart1; 
-  }
-}
-.icon-heart {
-  &:before {
-    content: $icon-heart; 
   }
 }
 

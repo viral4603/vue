@@ -19,9 +19,14 @@ export default defineComponent({
     };
   },
   created() {
-    productService.getProductList().then((res: any) => {
-      this.productList = res.data;
-    });
+    console.log(this.$route.path)
+    if(this.$route.path == '/home') {
+      this.getAllItems();
+      
+    }
+    else{
+      this.getItemsByCategories(this.$route.path)
+    } 
   },
   computed: {
     getUpdatedRouteName() {
@@ -30,11 +35,13 @@ export default defineComponent({
   },
   watch: {
     getUpdatedRouteName(newVal) {
-      newVal = newVal.replace(/\/+/g, "");
       if (newVal) {
-        productService.getCategoryViseProduct(newVal).then((res: any) => {
-          this.productList = res.data;
-        });
+        if(newVal == '/home'){
+           this.getAllItems();
+        }
+        else{
+          this.getItemsByCategories(newVal)
+        }
       }
     },
   },
@@ -46,6 +53,19 @@ export default defineComponent({
         alert("items already addeed to the cart");
       }
     },
+    getAllItems() {
+       productService.getProductList().then((res: any) => {
+        this.productList = res;
+          productStore.dispatch("addProductList",res)
+      });
+    },
+    getItemsByCategories(category:any) {
+        category = category.replace(/\/+/g, "");
+        productService.getCategoryViseProduct(category).then((res: any) => {
+          this.productList = res;
+        
+        });
+    }
   },
 });
 </script>
