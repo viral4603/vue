@@ -16,3 +16,19 @@ html,body{
         color: $danger;
     }
 }
+.header{
+    position: sticky;
+    top:0;
+    z-index: 999;
+    .user-profile{
+        height: 40px;
+        width: 40px;
+    }
+    .cart-items-count {
+        top: 0;
+        right: 0px;
+        height: 20px;
+        width: 20px;
+        font-size: 14px;
+    }
+}

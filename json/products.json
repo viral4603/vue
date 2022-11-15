@@ -1,141 +1,141 @@
 {
-    "products": [
-        {
-            "id": 1,
-            "title": "iPhone 9",
-            "description": "An apple mobile which is nothing like apple",
-            "price": 549,
-            "discountPercentage": 12.96,
-            "rating": 4.69,
-            "stock": 94,
-            "brand": "Apple",
-            "category": "electronics"
-          },
-          {
-            "id": 2,
-            "title": "iPhone 13",
-            "description": "An apple mobile which is nothing like apple",
-            "price": 549,
-            "discountPercentage": 12.96,
-            "rating": 4.69,
-            "stock": 94,
-            "brand": "Apple",
-            "category": "electronics"
-          },
-          {
-            "id": 3,
-            "title": "iPhone 11 pro",
-            "description": "An apple mobile which is nothing like apple",
-            "price": 650,
-            "discountPercentage": 17.90,
-            "rating": 4.69,
-            "stock": 94,
-            "brand": "Apple",
-            "category": "home-and-furniture"
-          },
-        {
-            "id": 4,
-            "title": "iPhone 9",
-            "description": "An apple mobile which is nothing like apple",
-            "price": 549,
-            "discountPercentage": 12.96,
-            "rating": 4.69,
-            "stock": 94,
-            "brand": "Apple",
-            "category": "home-and-furniture"
-          },
-          {
-            "id": 5,
-            "title": "iPhone 13",
-            "description": "An apple mobile which is nothing like apple",
-            "price": 549,
-            "discountPercentage": 12.96,
-            "rating": 4.69,
-            "stock": 94,
-            "brand": "Apple",
-            "category": "men"
-          },
-          {
-            "id": 6,
-            "title": "iPhone 9",
-            "description": "An apple mobile which is nothing like apple",
-            "price": 549,
-            "discountPercentage": 12.96,
-            "rating": 4.69,
-            "stock": 94,
-            "brand": "Apple",
-            "category": "women"
-          },
-          {
-            "id": 7,
-            "title": "iPhone 9",
-            "description": "An apple mobile which is nothing like apple",
-            "price": 549,
-            "discountPercentage": 12.96,
-            "rating": 4.69,
-            "stock": 94,
-            "brand": "Apple",
-            "category": "women"
-          },
-          {
-            "id": 8,
-            "title": "iPhone 9",
-            "description": "An apple mobile which is nothing like apple",
-            "price": 549,
-            "discountPercentage": 12.96,
-            "rating": 4.69,
-            "stock": 94,
-            "brand": "Apple",
-            "category": "tvs-and-appliances"
-          },
-          {
-            "id": 9,
-            "title": "iPhone 9",
-            "description": "An apple mobile which is nothing like apple",
-            "price": 549,
-            "discountPercentage": 12.96,
-            "rating": 4.69,
-            "stock": 94,
-            "brand": "Apple",
-            "category": "tvs-and-appliances"
-          },
-          {
-            "id": 10,
-            "title": "iPhone 9",
-            "description": "An apple mobile which is nothing like apple",
-            "price": 549,
-            "discountPercentage": 12.96,
-            "rating": 4.69,
-            "stock": 94,
-            "brand": "Apple",
-            "category": "tvs-and-appliances"
-          }
-    ],
-    
-    "categories":[
-      {
-        "name":"Electronics",
-        "routeName":"electronics"
-      },
-      {
-        "name":"TVs & Appliances",
-        "routeName":"tvs-and-appliances"
-      },
-      {
-        "name":"Men",
-        "routeName":"men"
-      },
-      {
-        "name":"Women",
-        "routeName":"women"
-      },
-      {
-        "name":"Home & Furniture",
-        "routeName":"home-and-furniture"
-      },
-      {
-        "name":"Sports, Books & More",
-        "routeName":"sports-books-and-more"
-      }
-    ]
+  "products": [
+    {
+      "id": 1,
+      "title": "iPhone 9",
+      "description": "An apple mobile which is nothing like apple",
+      "price": 435,
+      "discountPercentage": 12.96,
+      "rating": 4.69,
+      "stock": 94,
+      "brand": "Apple",
+      "category": "electronics"
+    },
+    {
+      "id": 2,
+      "title": "iPhone 13",
+      "description": "An apple mobile which is nothing like apple",
+      "price": 549,
+      "discountPercentage": 12.96,
+      "rating": 4.69,
+      "stock": 94,
+      "brand": "Apple",
+      "category": "electronics"
+    },
+    {
+      "id": 3,
+      "title": "iPhone 11 pro",
+      "description": "An apple mobile which is nothing like apple",
+      "price": 325,
+      "discountPercentage": 17.9,
+      "rating": 4.69,
+      "stock": 94,
+      "brand": "Apple",
+      "category": "home-and-furniture"
+    },
+    {
+      "id": 4,
+      "title": "iPhone 9",
+      "description": "An apple mobile which is nothing like apple",
+      "price": 444,
+      "discountPercentage": 12.96,
+      "rating": 4.69,
+      "stock": 94,
+      "brand": "Apple",
+      "category": "home-and-furniture"
+    },
+    {
+      "id": 5,
+      "title": "iPhone 13",
+      "description": "An apple mobile which is nothing like apple",
+      "price": 987,
+      "discountPercentage": 12.96,
+      "rating": 4.69,
+      "stock": 94,
+      "brand": "Apple",
+      "category": "men"
+    },
+    {
+      "id": 6,
+      "title": "iPhone 9",
+      "description": "An apple mobile which is nothing like apple",
+      "price": 574,
+      "discountPercentage": 12.96,
+      "rating": 4.69,
+      "stock": 94,
+      "brand": "Apple",
+      "category": "women"
+    },
+    {
+      "id": 7,
+      "title": "iPhone 9",
+      "description": "An apple mobile which is nothing like apple",
+      "price": 366,
+      "discountPercentage": 12.96,
+      "rating": 4.69,
+      "stock": 94,
+      "brand": "Apple",
+      "category": "women"
+    },
+    {
+      "id": 8,
+      "title": "iPhone 9",
+      "description": "An apple mobile which is nothing like apple",
+      "price": 585,
+      "discountPercentage": 12.96,
+      "rating": 4.69,
+      "stock": 94,
+      "brand": "Apple",
+      "category": "tvs-and-appliances"
+    },
+    {
+      "id": 9,
+      "title": "iPhone 9",
+      "description": "An apple mobile which is nothing like apple",
+      "price": 549,
+      "discountPercentage": 12.96,
+      "rating": 4.69,
+      "stock": 94,
+      "brand": "Apple",
+      "category": "tvs-and-appliances"
+    },
+    {
+      "id": 10,
+      "title": "iPhone 9",
+      "description": "An apple mobile which is nothing like apple",
+      "price": 474,
+      "discountPercentage": 12.96,
+      "rating": 4.69,
+      "stock": 94,
+      "brand": "Apple",
+      "category": "tvs-and-appliances"
+    }
+  ],
+  "categories": [
+    {
+      "name": "Electronics",
+      "routeName": "electronics"
+    },
+    {
+      "name": "TVs & Appliances",
+      "routeName": "tvs-and-appliances"
+    },
+    {
+      "name": "Men",
+      "routeName": "men"
+    },
+    {
+      "name": "Women",
+      "routeName": "women"
+    },
+    {
+      "name": "Home & Furniture",
+      "routeName": "home-and-furniture"
+    },
+    {
+      "name": "Sports, Books & More",
+      "routeName": "sports-books-and-more"
+    }
+  ],
+  "orders": []
 }

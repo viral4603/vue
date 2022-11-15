@@ -22,6 +22,10 @@ class ProductService {
         })
     }
     //get id vise product based on cart list id
+
+    postOrder(obj:any){
+        return Http.post(`${url}orders`,obj)
+    }
 }
 
 const productService = new ProductService(); 

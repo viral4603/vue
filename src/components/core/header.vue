@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="header mb-3 bg-light">
     <nav class="navbar navbar-expand-lg bg-light">
       <div class="container">
         <a class="navbar-brand" href="#">MY shopy</a>
@@ -14,22 +14,14 @@
         >
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+          <ul class="navbar-nav mb-2 mb-lg-0">
             <li class="nav-item fw-bold">
               <router-link :to="'/home'" class="nav-link"> Home </router-link>
             </li>
             <li class="nav-item ms-lg-2 mt-1 mt-lg-0 fw-bold">
               <router-link :to="'/product'" class="nav-link">
                 Product
-              </router-link>
-            </li>
-          </ul>
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item fw-bold cursor-pointer">
-              <router-link :to="'/cart-list'" class="nav-link">
-                <span class="icon-cart fs-4"></span>
-                Cart<span class="cart-items ms-2">{{ getCartItemsCount }}</span>
               </router-link>
             </li>
           </ul>
@@ -44,17 +36,29 @@
               Search
             </button>
           </form>
+          <ul class="navbar-nav mb-2 mb-lg-0 d-flex align-items-center">
+            <li class="nav-item fw-bold cursor-pointer position-relative">
+              <router-link :to="'/cart-list'" class="nav-link">
+                <span class="icon-cart fs-4"></span>
+                <span class="cart-items-count ms-2 position-absolute rounded-circle text-center bg-secondary text-white">{{ getCartItemsCount }}</span>
+              </router-link>
+            </li>
+             <li class="nav-item fw-bold cursor-pointer">
+               <router-link :to="'/cart-list'" class="nav-link">
+                <figure class="user-profile rounded-circle overflow-hidden">
+                 
+                  <img src="../../assets/product-images/profile_user.jpg" class="img-fluid" alt="user-image">
+                </figure>            
+                  </router-link>
+            </li>
+          </ul>
         </div>
       </div>
     </nav>
     <!-- categories-nav-start -->
-    <nav class="categories navbar navbar-expand-lg mt-2">
+    <nav class="categories navbar navbar-expand-lg bg-light border-top">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0 w-100 justify-content-center">
-        <li
-          class="categories-item ms-lg-2 mt-1 mt-lg-0 fw-bold"
-          v-for="(item, index) in categories"
-          :key="index"
-        >
+        <li class="categories-item ms-lg-2 mt-1 mt-lg-0 fw-bold" v-for="(item, index) in categories" :key="index" >
           <router-link
             :to="`/${item.routeName}`"
             class="nav-link"
