@@ -12,8 +12,7 @@ import { ProductList } from "../model/product.model";
 }
 
 export class ProductListAdapter implements Adapter<ProductList[]> {
-
-    static toResponse(item: any): ProductList[] {
+    public toResponse(item: any): ProductList[] {
         const newProductList:ProductList[] = [];
         item.forEach((value:any)=>{
             let getPayPrice = Math.floor(value.price - (value.price/value.discountPercentage))
@@ -33,5 +32,6 @@ export class ProductListAdapter implements Adapter<ProductList[]> {
         })
         return newProductList;
     }
-
 }
+const productListAdpter = new ProductListAdapter()
+export { productListAdpter }

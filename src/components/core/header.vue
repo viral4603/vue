@@ -44,7 +44,7 @@
               </router-link>
             </li>
              <li class="nav-item fw-bold cursor-pointer">
-               <router-link :to="'/cart-list'" class="nav-link">
+               <router-link :to="'/user-profile'" class="nav-link">
                 <figure class="user-profile rounded-circle overflow-hidden">
                  
                   <img src="../../assets/product-images/profile_user.jpg" class="img-fluid" alt="user-image">
@@ -86,16 +86,13 @@ export default defineComponent({
   created() {
     productService.getCategoriesList().then((res: any) => {
       this.categories = res;
-      console.log(this.categories);
     });
     productService.getCategoryViseProduct("Electronics").then((res: any) => {
-      console.log(res.data);
     });
   },
   methods: {
     setRoute() {
       productStore.dispatch("setCurrentRoute", this.$route.name);
-      console.log(productStore.getters.getCurrentRouteName);
     },
   },
   computed: {

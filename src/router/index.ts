@@ -2,6 +2,7 @@ import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router'
 import AppCell from '../components/app-cell.vue'
 import PageNotFound from '@/components/page-not-found.vue'
 import productRoute from '@/product/route/product.route'
+import RegistrationContainer from '@/components/registration/registration-container/registration.container.vue'
 
 //Appcell routing
 const appCellRoute = [
@@ -35,6 +36,11 @@ const routes: Array<RouteRecordRaw> = [
     component: AppCell,
     children: appCellRoute
   },
+  {
+    path:'/registration',
+    name:'registration',
+    component:RegistrationContainer
+  }
   // { path: "/:pathMatch(.*)*", name: "PageNotFound", component: PageNotFound },
 ]
 

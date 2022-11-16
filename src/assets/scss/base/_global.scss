@@ -32,3 +32,12 @@ html,body{
         font-size: 14px;
     }
 }
+.wrapper {
+    background-image: url("~@/assets/product-images/background-image.jpg");
+    background-size: cover;
+}
+.registration-form-container {
+    right:200px;
+    top:100px;
+    height: fit-content;
+}
