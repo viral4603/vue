@@ -7,6 +7,11 @@ class CommanService {
             return res.data
         })
     }
+    getUsers() {
+        return Http.get(`${url}users`).then((res:any)=>{       
+            return res.data
+        })
+    }
 }
 
 const commanService = new CommanService()

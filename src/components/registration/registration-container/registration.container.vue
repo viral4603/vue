@@ -14,7 +14,7 @@ export default defineComponent({
         postUser(data:any){
             commanService.postUser(data).then((res:any) =>{
                 if(res) {
-                    this.$router.push('/home')
+                    this.$router.push('/login')
                 }
             })
         }

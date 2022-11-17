@@ -37,19 +37,27 @@
             </button>
           </form>
           <ul class="navbar-nav mb-2 mb-lg-0 d-flex align-items-center">
+            <li class="nav-item">            
+                <router-link :to="'/login'"><button class="btn btn-primary" v-if="!getUserDeatils.isUserLogin">login</button></router-link>
+            </li>
             <li class="nav-item fw-bold cursor-pointer position-relative">
               <router-link :to="'/cart-list'" class="nav-link">
                 <span class="icon-cart fs-4"></span>
                 <span class="cart-items-count ms-2 position-absolute rounded-circle text-center bg-secondary text-white">{{ getCartItemsCount }}</span>
               </router-link>
             </li>
-             <li class="nav-item fw-bold cursor-pointer">
-               <router-link :to="'/user-profile'" class="nav-link">
-                <figure class="user-profile rounded-circle overflow-hidden">
-                 
-                  <img src="../../assets/product-images/profile_user.jpg" class="img-fluid" alt="user-image">
-                </figure>            
-                  </router-link>
+            <li class="nav-item fw-bold cursor-pointer position-relative" v-if="getUserDeatils.isUserLogin">
+               <a class="nav-link" @click="expandUserMenu()">
+                  <figure class="user-profile rounded-circle overflow-hidden mb-1">                  
+                    <img src="../../assets/product-images/profile_user.jpg" class="img-fluid" alt="user-image">
+                  </figure>            
+                </a>
+                <div class="user-container position-absolute">
+                  <user-menu />
+                </div>
+            </li>
+            <li class="nav-item">
+                <h6 class="fw-bold">{{getUserDeatils.userName ? getUserDeatils.userName : ''}}</h6>
             </li>
           </ul>
         </div>
@@ -76,11 +84,16 @@
 import { defineComponent } from "vue";
 import productService from "@/product/services/product.service";
 import productStore from "@/product/store/product.store";
+import store from "@/store"
+import UserMenu from "@/user/components/user-menu/user-menu.vue"
 export default defineComponent({
-  setup() {},
+  components:{
+    UserMenu
+  },
   data() {
     return {
       categories: [],
+      isProfileClick:false
     };
   },
   created() {
@@ -94,11 +107,25 @@ export default defineComponent({
     setRoute() {
       productStore.dispatch("setCurrentRoute", this.$route.name);
     },
+    expandUserMenu(){
+      const userMenuElemt = document.querySelector('.user-container')
+      if(this.isProfileClick) {
+        userMenuElemt?.classList.remove('expand')
+        this.isProfileClick = false
+      }
+      else{
+        userMenuElemt?.classList.add('expand')
+        this.isProfileClick = true
+      }
+    }
   },
   computed: {
     getCartItemsCount() {
       return productStore.getters.getCart.length;
     },
+    getUserDeatils() {
+      return store.getters.getUserDeatils
+    }
   },
 });
 </script>
