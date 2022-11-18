@@ -1,5 +1,5 @@
 <template>
-  <div class="header mb-3 bg-light">
+  <div class="header bg-light">
     <nav class="navbar navbar-expand-lg bg-light">
       <div class="container">
         <a class="navbar-brand" href="#">MY shopy</a>
@@ -53,7 +53,7 @@
                   </figure>            
                 </a>
                 <div class="user-container position-absolute">
-                  <user-menu />
+                  <user-menu @closeMenu="closeMenu()"/>
                 </div>
             </li>
             <li class="nav-item">
@@ -107,7 +107,7 @@ export default defineComponent({
     setRoute() {
       productStore.dispatch("setCurrentRoute", this.$route.name);
     },
-    expandUserMenu(){
+    expandUserMenu() {
       const userMenuElemt = document.querySelector('.user-container')
       if(this.isProfileClick) {
         userMenuElemt?.classList.remove('expand')
@@ -117,6 +117,9 @@ export default defineComponent({
         userMenuElemt?.classList.add('expand')
         this.isProfileClick = true
       }
+    },
+    closeMenu() {
+      this.expandUserMenu()
     }
   },
   computed: {

@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container py-3">
     <div class="heading d-flex justify-content-between align-items-center mb-3">
         <h5 class="text-primary fw-bold mb-0"><span class="icon-cart text-warning"></span> Cart List items </h5>
         <button type="button" class="btn btn-primary" :disabled="cartList?.length<=0" @click="cartItemsToCheckout()">CheckOut</button>

@@ -19,7 +19,6 @@ export default defineComponent({
     };
   },
   created() {
-    console.log(this.$route.path)
     if(this.$route.path == '/home') {
       this.getAllItems();
       
@@ -62,8 +61,7 @@ export default defineComponent({
     getItemsByCategories(category:any) {
         category = category.replace(/\/+/g, "");
         productService.getCategoryViseProduct(category).then((res: any) => {
-          this.productList = res;
-        
+          this.productList = res;        
         });
     }
   },

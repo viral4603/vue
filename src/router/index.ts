@@ -15,23 +15,28 @@ const appCellRoute = [
   },
   {
     path:'/',
-    redirect:'login'
+    redirect:'home'
   },
   {
     path:'checkout',
     name:'checkout',
     component:() => import(/* webpackChunkName: "CheckoutDeatails" */ "@/checkout/checkout-details-container/checkout-details.container.vue")
   },
-  // {
-  //   path:'user',
-  //   name:'user',
-  //   component:() => import(/* webpackChunkName: "CheckoutDeatails" */ "@/user/components/user-menu/user-menu.vue")
-  // },
   {
     path:'checkout/:id',
     name:'checkoutwithid',
     component:() => import(/* webpackChunkName: "CheckoutDeatails" */ "@/checkout/checkout-details-container/checkout-details.container.vue"),
     beforeEnter:isUserLogin
+  },
+  {
+    path:'orders',
+    name:'orders',
+    component:() => import(/* webpackChunkName: "OrderDetails" */ "@/order/order-details-container/order-details.containner.vue")
+  },
+  {
+    path:'user-profile',
+    name:'userProfile',
+    component:() => import(/* webpackChunkName: "UserProfile" */ "@/user/components/user-profile/user-profile.container.vue")
   },
   ...productRoute,
   { path: "/:pathMatch(.*)*", name: "PageNotFound", component: PageNotFound },

@@ -12,6 +12,12 @@ class CommanService {
             return res.data
         })
     }
+    //get all order 
+    getOrders(userId:any) {
+        return Http.get(`${url}orders?userId=${userId}`).then((res:any) => {
+            return res.data
+        })
+    }
 }
 
 const commanService = new CommanService()

@@ -1,5 +1,5 @@
 <template>
- <div class="container">
+ <div class="container py-3">
     <div class="row gy-3">
         <div class="col-12 col-md-3" v-for="(items,index) in productListData" :key="index">
             <ProductCard :item=items

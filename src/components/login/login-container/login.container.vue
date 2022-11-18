@@ -30,7 +30,8 @@ export default defineComponent({
                         if(element.password === data.password) {
                             const user = {
                                 'userName':element.name,
-                                'isLogin' : true
+                                'id': element.id,
+                                'isLogin' : true,
                             }
                             this.$router.push('/home')
                             store.dispatch('setUser',user)

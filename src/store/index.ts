@@ -5,7 +5,8 @@ export default createStore({
     loader:false,
     user:{
       isUserLogin:false,
-      userName:''
+      userName:'',
+      userId:''
     }
   },
   getters: {
@@ -20,6 +21,7 @@ export default createStore({
     SET_USER(state,value) {
       state.user.isUserLogin = value.isLogin,
       state.user.userName = value.userName
+      state.user.userId = value.id
     }
   },
   actions: {

@@ -56,11 +56,6 @@ export default defineComponent({
         onSubmit(values:any) {
             this.$emit('loginUser',values)
         }
-    },
-    watch:{
-        errorMsg(newVal){
-            console.log(newVal)
-        }
     }
  
 })

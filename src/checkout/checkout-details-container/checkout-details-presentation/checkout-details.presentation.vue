@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="container py-3">
         <div class="heading mb-3">
           <h5 class="text-primary fw-bold mb-0"><span class="icon-cart text-warning"></span>CheckOut Items</h5>
         </div>
@@ -58,6 +58,7 @@
     </div>
 </template>
 <script lang="ts">
+import store from "@/store";
 import { defineComponent } from "vue";
 
 export default defineComponent({
@@ -118,7 +119,8 @@ export default defineComponent({
       const order = { 
         "items":this.checkoutItems,
         "paymentMethod":this.paymentOption,
-        "totalPaybleAmount":this.getTotalPayableAmounts
+        "totalPaybleAmount":this.getTotalPayableAmounts,
+        "userId":store.getters.getUserDeatils.userId
       }
       this.$emit('addOrder',order)
     }
