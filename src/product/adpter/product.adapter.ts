@@ -26,7 +26,8 @@ export class ProductListAdapter implements Adapter<ProductList[]> {
                 value.stock,
                 value.brand,
                 value.category,
-                getPayPrice                
+                getPayPrice,
+                value.image                
             );
             newProductList.push(productData)
         })

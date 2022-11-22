@@ -7,7 +7,8 @@ export default createStore({
       isUserLogin:false,
       userName:'',
       userId:''
-    }
+    },
+    searchFieldText:'' as string
   },
   getters: {
     getUserDeatils(state) {
@@ -22,6 +23,9 @@ export default createStore({
       state.user.isUserLogin = value.isLogin,
       state.user.userName = value.userName
       state.user.userId = value.id
+    },
+    SET_SEARCH_VALUE(state,value) {
+      state.searchFieldText = value
     }
   },
   actions: {
@@ -36,6 +40,9 @@ export default createStore({
     },
     removeUser({commit},value) {
       commit('SET_USER',value)
+    },
+    setSearch({commit},value) {
+      commit('SET_SEARCH_VALUE',value)
     }
   },
   modules: {

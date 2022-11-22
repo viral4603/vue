@@ -1,6 +1,6 @@
 export default function pageTitle() {
-    function setPageTitle(dtitle:string){
-        document.title = dtitle
+    function setPageTitle(pTitle:string){
+        document.title = pTitle
     }
     return {
         setPageTitle

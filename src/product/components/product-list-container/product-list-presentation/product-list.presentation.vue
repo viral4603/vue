@@ -1,9 +1,12 @@
 <template>
  <div class="container py-3">
     <div class="row gy-3">
-        <div class="col-12 col-md-3" v-for="(items,index) in productListData" :key="index">
+        <div class="col-12 col-md-6 col-lg-4 col-xl-3" v-for="(items,index) in productListData" :key="index">
             <ProductCard :item=items
             @addItemTocart="addItemTocart($event)" />
+        </div>
+        <div class="text-center py-3" v-if="noSearchItems">
+            <h5>No items found in search</h5>
         </div>
     </div>
  </div>
@@ -19,6 +22,9 @@ export default defineComponent({
    props:{
     productList:{
         required:true
+    },
+    noSearchItems:{
+        required:true
     }
    },
    emits:[
@@ -26,10 +32,7 @@ export default defineComponent({
    ],
    data() {
     return {
-        tempdata:{
-
-        },
-        productListData:[] as any
+        productListData:[] as any,
     }
    },
    watch:{

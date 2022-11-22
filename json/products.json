@@ -2,113 +2,147 @@
   "products": [
     {
       "id": 1,
-      "title": "iPhone 9",
-      "description": "An apple mobile which is nothing like apple",
+      "title": "iPhone X",
+      "description": "64 GB ROM | 14.73 cm (5.8 inch) Super Retina HD Display | 12MP + 12MP | 7MP Front Camera | A11 Bionic Chip with 64-bit Architecture",
       "price": 435,
       "discountPercentage": 12.96,
       "rating": 4.69,
       "stock": 94,
       "brand": "Apple",
-      "category": "electronics"
+      "category": "electronics",
+      "image": "iphonex.jpg"
     },
     {
       "id": 2,
-      "title": "iPhone 13",
-      "description": "An apple mobile which is nothing like apple",
+      "title": "iPhone 11",
+      "description": "128 GB ROM | 15.49 cm (6.1 inch) Super Retina XDR Display | 12MP + 12MP | 12MP Front Camera | A15 Bionic Chip Processor",
       "price": 549,
       "discountPercentage": 12.96,
       "rating": 4.69,
       "stock": 94,
       "brand": "Apple",
-      "category": "electronics"
+      "category": "electronics",
+      "image": "iphone11.avif"
     },
     {
       "id": 3,
-      "title": "iPhone 11 pro",
-      "description": "An apple mobile which is nothing like apple",
+      "title": "Study Table",
+      "description": "Material: Particle Board | Configuration: Straight | Height x Width: 76 cm x 110 cm (2 ft 5 in x 3 ft 7 in) | Storage Included",
       "price": 325,
       "discountPercentage": 17.9,
       "rating": 4.69,
       "stock": 94,
-      "brand": "Apple",
-      "category": "home-and-furniture"
+      "brand": "Nilkamal ",
+      "category": "home-and-furniture",
+      "image": "Study_table.webp"
     },
     {
       "id": 4,
-      "title": "iPhone 9",
-      "description": "An apple mobile which is nothing like apple",
-      "price": 444,
+      "title": "Wood 2 Door Wardrobe",
+      "description": "Primary Material: Engineered Wood | Width x Height: 80 cm x 183 cm (2 ft 7 in x 6 ft) | Number Of Doors: 2 | Number Of Shelves: 3 | Weight: 72",
+      "price": 321,
       "discountPercentage": 12.96,
       "rating": 4.69,
       "stock": 94,
-      "brand": "Apple",
-      "category": "home-and-furniture"
+      "brand": "Nilkamal ",
+      "category": "home-and-furniture",
+      "image": "Wardrobe.webp"
     },
     {
       "id": 5,
-      "title": "iPhone 13",
-      "description": "An apple mobile which is nothing like apple",
-      "price": 987,
+      "title": "511 Slim Men Grey Jeans",
+      "description": "A modern slim with room to move; the 511 Slim Fit Jean has added stretch for all-day comfort. It offers a lean look and is a great alternative to skinny jeans",
+      "price": 199,
       "discountPercentage": 12.96,
       "rating": 4.69,
       "stock": 94,
-      "brand": "Apple",
-      "category": "men"
+      "brand": "LEVI'S ",
+      "category": "men",
+      "image": "jeans.webp"
     },
     {
       "id": 6,
-      "title": "iPhone 9",
-      "description": "An apple mobile which is nothing like apple",
+      "title": "Women Blue Flats Sandal",
+      "description": "Crafted with perfection, these sandals with heels are made using quality material to assure superior comfort and unmatched style",
       "price": 574,
       "discountPercentage": 12.96,
       "rating": 4.69,
       "stock": 94,
-      "brand": "Apple",
-      "category": "women"
+      "brand": "Bambam ",
+      "category": "women",
+      "image": "sandals.webp"
     },
     {
       "id": 7,
-      "title": "iPhone 9",
-      "description": "An apple mobile which is nothing like apple",
+      "title": "Analog Watch - For Women",
+      "description": "Water Resistant-Yes | Display Type - Analog | Style Code - 87037PP01W | Occasion - Casual | Watch Type - Wrist Watch | Pack of - 1 | Strap Color - Green",
       "price": 366,
       "discountPercentage": 12.96,
       "rating": 4.69,
       "stock": 94,
       "brand": "Apple",
-      "category": "women"
+      "category": "women",
+      "image": "watch.webp"
     },
     {
       "id": 8,
-      "title": "iPhone 9",
-      "description": "An apple mobile which is nothing like apple",
+      "title": "Voltas 1.5 Ton 5 Star Split Inverter AC - White",
+      "description": "1.5 Ton 5 Star BEE Rating 2022 : For energy savings upto 25% (compared to Non-Inverter 1 Star) | uto Restart: No need to manually reset the settings post power-cut",
       "price": 585,
       "discountPercentage": 12.96,
       "rating": 4.69,
       "stock": 94,
       "brand": "Apple",
-      "category": "tvs-and-appliances"
+      "category": "tvs-and-appliances",
+      "image": "voltas_ac.webp"
     },
     {
       "id": 9,
-      "title": "iPhone 9",
-      "description": "An apple mobile which is nothing like apple",
+      "title": "Atomberg Renesa 1200 mm Fan",
+      "description": "Atomberg Renesa is made with BLDC motor technology and is 5-star rated, using up to 65% less electricity. This leads to savings of up to Rs. 1500 per year in energy bills",
       "price": 549,
       "discountPercentage": 12.96,
       "rating": 4.69,
       "stock": 94,
-      "brand": "Apple",
-      "category": "tvs-and-appliances"
+      "brand": "Atomberg",
+      "category": "tvs-and-appliances",
+      "image": "fan.webp"
     },
     {
       "id": 10,
-      "title": "iPhone 9",
-      "description": "An apple mobile which is nothing like apple",
+      "title": "BOSCH MGM8842MIN TrueMixx Pro 1000 W Mixer Grinder ",
+      "description": "Centrifugal Juicer : Easy and quick juicing, ideal for larger fruits and veggies 1000 W : Higher the Wattage, tougher the Juicing/Grinding Suitable for: Grinding",
       "price": 474,
       "discountPercentage": 12.96,
       "rating": 4.69,
       "stock": 94,
-      "brand": "Apple",
-      "category": "tvs-and-appliances"
+      "brand": "BOSCH",
+      "category": "tvs-and-appliances",
+      "image": "mixture.webp"
+    },
+    {
+      "id": 11,
+      "title": "MRF ENDORSED | for Light/Hard Tennis Ball",
+      "description": "Zuurvi M-F Genius Grand Edition, Full Size (SH) Natural Popular Willow Cricket Bat are engineered to maximise the size of the sweet spot",
+      "price": 124,
+      "discountPercentage": 12.96,
+      "rating": 4.69,
+      "stock": 94,
+      "brand": "MRF",
+      "category": "sports-books-and-more",
+      "image": "bat.webp"
+    },
+    {
+      "id": 12,
+      "title": "The Answer Writing Manual For UPSC Civil Services Exam",
+      "description": "WANT TO SCORE BETTER IN UPSC AND STATE CIVIL SERVICE MAINS EXAMS? LOOK NO FURTHER. The Answer Writing Manual is a step by step guide for Civil service Mains Examination which has both preparation",
+      "price": 100,
+      "discountPercentage": 8.96,
+      "rating": 43.69,
+      "stock": 94,
+      "brand": "MRF",
+      "category": "sports-books-and-more",
+      "image": "book.webp"
     }
   ],
   "categories": [
@@ -137,6 +171,167 @@
       "routeName": "sports-books-and-more"
     }
   ],
-  "orders": [],
-  "users":[]
+  "orders": [
+    {
+      "items": [
+        {
+          "id": 2,
+          "title": "iPhone 13",
+          "description": "An apple mobile which is nothing like apple",
+          "price": 549,
+          "discountPercentage": 12.96,
+          "rating": 4.69,
+          "stock": 94,
+          "brand": "Apple",
+          "category": "electronics",
+          "sellingPrice": 506,
+          "quantity": 2,
+          "payAmount": 1012
+        }
+      ],
+      "paymentMethod": "cashOnDelivery",
+      "totalPaybleAmount": 1012,
+      "userId": 1,
+      "id": 1
+    },
+    {
+      "items": [
+        {
+          "id": 2,
+          "title": "iPhone 13",
+          "description": "An apple mobile which is nothing like apple",
+          "price": 549,
+          "discountPercentage": 12.96,
+          "rating": 4.69,
+          "stock": 94,
+          "brand": "Apple",
+          "category": "electronics",
+          "sellingPrice": 506,
+          "quantity": 1,
+          "payAmount": 506
+        },
+        {
+          "id": 3,
+          "title": "iPhone 11 pro",
+          "description": "An apple mobile which is nothing like apple",
+          "price": 325,
+          "discountPercentage": 17.9,
+          "rating": 4.69,
+          "stock": 94,
+          "brand": "Apple",
+          "category": "home-and-furniture",
+          "sellingPrice": 306,
+          "quantity": 1,
+          "payAmount": 306
+        }
+      ],
+      "paymentMethod": "cashOnDelivery",
+      "totalPaybleAmount": 812,
+      "userId": 1,
+      "id": 2
+    },
+    {
+      "items": [
+        {
+          "id": 8,
+          "title": "iPhone X",
+          "description": "An apple mobile which is nothing like apple",
+          "price": 585,
+          "discountPercentage": 12.96,
+          "rating": 4.69,
+          "stock": 94,
+          "brand": "Apple",
+          "category": "tvs-and-appliances",
+          "sellingPrice": 539,
+          "quantity": 2,
+          "payAmount": 1078
+        },
+        {
+          "id": 9,
+          "title": "iPhone X",
+          "description": "An apple mobile which is nothing like apple",
+          "price": 549,
+          "discountPercentage": 12.96,
+          "rating": 4.69,
+          "stock": 94,
+          "brand": "Apple",
+          "category": "tvs-and-appliances",
+          "sellingPrice": 506,
+          "quantity": 1,
+          "payAmount": 506
+        }
+      ],
+      "paymentMethod": "gpay",
+      "totalPaybleAmount": 1584,
+      "userId": 1,
+      "id": 3
+    },
+    {
+      "items": [
+        {
+          "id": 9,
+          "title": "Samsung Galaxy S22",
+          "description": "Samsung Galaxy S22 5G (Phantom White, 8GB RAM, 128GB Storage) with No Cost EMI/Additional Exchange Offers",
+          "price": 549,
+          "discountPercentage": 12.96,
+          "rating": 4.69,
+          "stock": 94,
+          "brand": "Sumsung",
+          "category": "tvs-and-appliances",
+          "sellingPrice": 506,
+          "image": "s22.jpg",
+          "quantity": 2,
+          "payAmount": 1012
+        }
+      ],
+      "paymentMethod": "gpay",
+      "totalPaybleAmount": 1012,
+      "userId": 1,
+      "id": 4
+    },
+    {
+      "items": [
+        {
+          "id": 1,
+          "title": "iPhone X",
+          "description": "64 GB ROM | 14.73 cm (5.8 inch) Super Retina HD Display | 12MP + 12MP | 7MP Front Camera | A11 Bionic Chip with 64-bit Architecture",
+          "price": 435,
+          "discountPercentage": 12.96,
+          "rating": 4.69,
+          "stock": 94,
+          "brand": "Apple",
+          "category": "electronics",
+          "sellingPrice": 401,
+          "image": "iphonex.jpg",
+          "quantity": 1,
+          "payAmount": 401
+        }
+      ],
+      "paymentMethod": "cashOnDelivery",
+      "totalPaybleAmount": 401,
+      "userId": 1,
+      "id": 5
+    },
+    {
+      "items": [],
+      "paymentMethod": "gpay",
+      "userId": 1,
+      "id": 6
+    }
+  ],
+  "users": [
+    {
+      "name": "viral",
+      "email": "viral1@gmail.com",
+      "contactNo": "7878787878",
+      "gender": "male",
+      "password": "Asdf@123",
+      "passwordConfirm": "Asdf@123",
+      "country": "5",
+      "state": "1",
+      "address": "valsad,gujarat,96001",
+      "checkme": true,
+      "id": 1
+    }
+  ]
 }

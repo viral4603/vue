@@ -66,12 +66,12 @@ const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes
 })
-router.beforeEach((to,from,next) => {
-  if(!to.meta.authorized) {
-    next()
-  }else {
-    alert('please log in first')
-  }
-})
+// router.beforeEach((to,from,next) => {
+//   if(!to.meta.authorized) {
+//     next()
+//   }else {
+//     alert('please log in first')
+//   }
+// })
 
 export default router

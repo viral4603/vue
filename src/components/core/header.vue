@@ -31,16 +31,17 @@
               type="search"
               placeholder="Search"
               aria-label="Search"
+              v-model="searchText"
             />
-            <button class="btn btn-outline-success" type="submit">
+            <button class="btn btn-outline-success" @click.prevent="searchItems()">
               Search
             </button>
           </form>
-          <ul class="navbar-nav mb-2 mb-lg-0 d-flex align-items-center">
+          <ul class="navbar-nav mt-3 mt-lg-0 mb-2 mb-lg-0 d-flex flex-row align-items-center">
             <li class="nav-item">            
                 <router-link :to="'/login'"><button class="btn btn-primary" v-if="!getUserDeatils.isUserLogin">login</button></router-link>
             </li>
-            <li class="nav-item fw-bold cursor-pointer position-relative">
+            <li class="nav-item fw-bold cursor-pointer position-relative ms-3 ms-lg-0">
               <router-link :to="'/cart-list'" class="nav-link">
                 <span class="icon-cart fs-4"></span>
                 <span class="cart-items-count ms-2 position-absolute rounded-circle text-center bg-secondary text-white">{{ getCartItemsCount }}</span>
@@ -56,7 +57,7 @@
                   <user-menu @closeMenu="closeMenu()"/>
                 </div>
             </li>
-            <li class="nav-item">
+            <li class="nav-item ms-3 ms-lg-0" v-if="getUserDeatils.userName ">
                 <h6 class="fw-bold">{{getUserDeatils.userName ? getUserDeatils.userName : ''}}</h6>
             </li>
           </ul>
@@ -65,17 +66,19 @@
     </nav>
     <!-- categories-nav-start -->
     <nav class="categories navbar navbar-expand-lg bg-light border-top">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0 w-100 justify-content-center">
-        <li class="categories-item ms-lg-2 mt-1 mt-lg-0 fw-bold" v-for="(item, index) in categories" :key="index" >
-          <router-link
-            :to="`/${item.routeName}`"
-            class="nav-link"
-            @click="setRoute()"
-          >
-            {{ item.name }}
-          </router-link>
-        </li>
-      </ul>
+      <div class="container">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 w-100 justify-content-center">
+          <li class="categories-item ms-lg-2 mt-1 mt-lg-0 fw-bold" v-for="(item, index) in categories" :key="index" >
+            <router-link
+              :to="`/${item.routeName}`"
+              class="nav-link"
+              @click="setRoute()"
+            >
+              {{ item.name }}
+            </router-link>
+          </li>
+        </ul>
+      </div>
     </nav>
     <!-- categories-nav-end  -->
   </div>
@@ -86,6 +89,8 @@ import productService from "@/product/services/product.service";
 import productStore from "@/product/store/product.store";
 import store from "@/store"
 import UserMenu from "@/user/components/user-menu/user-menu.vue"
+import emitter from '@/emitter/emitter.mitt'
+
 export default defineComponent({
   components:{
     UserMenu
@@ -93,7 +98,8 @@ export default defineComponent({
   data() {
     return {
       categories: [],
-      isProfileClick:false
+      isProfileClick:false,
+      searchText:'' as string,
     };
   },
   created() {
@@ -117,6 +123,13 @@ export default defineComponent({
         userMenuElemt?.classList.add('expand')
         this.isProfileClick = true
       }
+    },
+    searchItems(){
+      if(this.searchText) {
+        emitter.emit('seachText', this.searchText)
+        this.searchText = ''
+      }
+      // this.searchText = ''
     },
     closeMenu() {
       this.expandUserMenu()

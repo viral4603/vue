@@ -1,7 +1,10 @@
 <template>
   <!-- <span class="d-none">{{getRoute}}</span> -->
   {{ getCurrentRouteName }}
-  <ProductListPresentation :productList="productList" @addTocart="addItemsTocart($event)">
+  <ProductListPresentation 
+    :productList="productList"
+    :noSearchItems="noItemFound"
+    @addTocart="addItemsTocart($event)">
   </ProductListPresentation>
 </template>
 <script lang="ts">
@@ -9,6 +12,8 @@ import { defineComponent } from "vue";
 import ProductListPresentation from "./product-list-presentation/product-list.presentation.vue";
 import productService from "@/product/services/product.service";
 import productStore from "@/product/store/product.store";
+import emitter from '@/emitter/emitter.mitt'
+
 export default defineComponent({
   components: {
     ProductListPresentation,
@@ -16,16 +21,20 @@ export default defineComponent({
   data() {
     return {
       productList: [] as any,
+      searchValue:'' as any,
+      noItemFound:false
     };
   },
   created() {
     if(this.$route.path == '/home') {
-      this.getAllItems();
-      
+      this.getAllItems();      
     }
-    else{
+    else {
       this.getItemsByCategories(this.$route.path)
-    } 
+    }
+    emitter.on('seachText',e=> {
+      this.searchValue = e;
+    })
   },
   computed: {
     getUpdatedRouteName() {
@@ -43,6 +52,20 @@ export default defineComponent({
         }
       }
     },
+    searchValue(newVal){
+      const getProductList = productStore.getters.getAllProductList
+      if(newVal) {
+        this.productList = getProductList?.filter((ele:any) => {            
+            return ele.title.toLowerCase().includes(newVal.toLowerCase())
+        })
+        if(!this.productList.length){
+          this.noItemFound = true;
+        }
+        else{
+          this.noItemFound = false;
+        }
+      }
+    }
   },
   methods: {
     addItemsTocart(id: any) {
@@ -61,8 +84,12 @@ export default defineComponent({
     getItemsByCategories(category:any) {
         category = category.replace(/\/+/g, "");
         productService.getCategoryViseProduct(category).then((res: any) => {
-          this.productList = res;        
+          this.productList = res;    
+          productStore.dispatch("addProductList",res)    
         });
+    },
+    getSearch(sear:any){
+
     }
   },
 });

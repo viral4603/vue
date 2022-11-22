@@ -1,6 +1,6 @@
 <template>
     <checkout-details-presentation 
-    :productList= product
+    :productList="product"
     @addOrder = confirmOrder($event) />
 </template>
 <script lang="ts">
@@ -21,6 +21,7 @@ export default defineComponent({
     }
   },
   created() {
+    console.log(this.getAllProductList)
     if(this.$route.params.id){
       this.product = this.getAllProductList.filter((ele:any) => ele.id == this.$route.params.id)
     }

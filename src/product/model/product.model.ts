@@ -9,6 +9,7 @@ export class ProductList {
     brand:string;
     category:string
     sellingPrice:number;
+    image:string
     
     constructor(
         id:number,
@@ -21,6 +22,7 @@ export class ProductList {
         brand:string,
         category:string,
         sellingPrice:number,
+        image:string
         ) {
             this.id = id;
             this.title = title;
@@ -32,6 +34,7 @@ export class ProductList {
             this.brand = brand;
             this.category = category;
             this.sellingPrice = sellingPrice;
+            this.image = image
 
         }
 

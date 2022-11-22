@@ -1,6 +1,6 @@
 <template>
 <!-- product-card-start -->
-  <div class="card position-relative">
+  <div class="card position-relative p-2 h-100">
     <div class="icons position-absolute cart-icons">
       <span class="icon-delete" @click="removeItemFromCart(item.id)" v-if="isCartView ? true : false">
       </span>
@@ -13,22 +13,30 @@
        :title="[getFavouriteItems.includes(item?.id) ? 'Already in favourite' : 'Add to favourite']" @click="addTOfaviourite(item.id)"></span>
     </div>
     <!-- product-image -->
-    <img src="../assets/product-images/pexels-photo-90946.jpeg" class="card-img-top" alt="" />
+    <div class="image-wrapper overflow-hidden d-flex align-items-center justify-content-center">
+      <figure class="mb-0 d-flex justify-content-center card-image">
+        <img :src="require(`../assets/product-images/${item.image}`)" class="img-fluid" :alt="item.image" />
+      </figure>
+    </div>
 
-    <div class="card-body">
+    <div class="card-body d-flex flex-column justify-content-between">
       <div class="d-flex justify-content-between">
         <div class="product-details">
-          <h5 class="fw-bold card-title mb-0 text-secondary">{{ item.title }}</h5> 
+          <h6 class="card-title mb-0 text-secondary">{{ item.title }}</h6> 
         </div>
         <div class="price-details">
           <h6 class="fw-bold text-info">{{ item.sellingPrice }}$</h6>
           <h6><span class="fw-bold text-decoration-line-through mb-0">{{ item.price }}</span>$ <span class="text-success">{{ Math.round(item.discountPercentage) }}</span>%</h6>
         </div>
       </div>
-      <p class="card-text">
-       {{ item.description }}
+      <p class="card-text overflow-hidden">
+        <small>
+          {{ item.description }}
+        </small>        
       </p>
-      <button class="btn btn-primary" @click="getCheckout(item.id)">Buy Now</button>
+      <div class="d-flex align-items-end">
+        <button class="btn btn-primary" @click="getCheckout(item.id)">Buy Now</button>
+      </div>
     </div>
   </div>
 <!-- product-card-end -->
