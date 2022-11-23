@@ -85,7 +85,6 @@ export default defineComponent({
         category = category.replace(/\/+/g, "");
         productService.getCategoryViseProduct(category).then((res: any) => {
           this.productList = res;    
-          productStore.dispatch("addProductList",res)    
         });
     },
     getSearch(sear:any){

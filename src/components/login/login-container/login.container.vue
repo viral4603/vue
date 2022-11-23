@@ -35,6 +35,7 @@ export default defineComponent({
                             }
                             this.$router.push('/home')
                             store.dispatch('setUser',user)
+                            localStorage.setItem('userInfo',JSON.stringify(user))
                         }
                         else {
                             this.errorMsg = `Password doesn't match`

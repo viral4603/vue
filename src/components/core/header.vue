@@ -2,7 +2,7 @@
   <div class="header bg-light">
     <nav class="navbar navbar-expand-lg bg-light">
       <div class="container">
-        <a class="navbar-brand" href="#">MY shopy</a>
+        <h1 class="mb-0 fs-4 fw-semibold text-warning me-4">MY shopy</h1>
         <button
           class="navbar-toggler"
           type="button"
@@ -39,7 +39,7 @@
           </form>
           <ul class="navbar-nav mt-3 mt-lg-0 mb-2 mb-lg-0 d-flex flex-row align-items-center">
             <li class="nav-item">            
-                <router-link :to="'/login'"><button class="btn btn-primary" v-if="!getUserDeatils.isUserLogin">login</button></router-link>
+                <router-link :to="'/login'"><button class="btn btn-primary" v-if="!getUserDeatils?.isLogin">login</button></router-link>
             </li>
             <li class="nav-item fw-bold cursor-pointer position-relative ms-3 ms-lg-0">
               <router-link :to="'/cart-list'" class="nav-link">
@@ -47,7 +47,7 @@
                 <span class="cart-items-count ms-2 position-absolute rounded-circle text-center bg-secondary text-white">{{ getCartItemsCount }}</span>
               </router-link>
             </li>
-            <li class="nav-item fw-bold cursor-pointer position-relative" v-if="getUserDeatils.isUserLogin">
+            <li class="nav-item fw-bold cursor-pointer position-relative" v-if="getUserDeatils?.isLogin">
                <a class="nav-link" @click="expandUserMenu()">
                   <figure class="user-profile rounded-circle overflow-hidden mb-1">                  
                     <img src="../../assets/product-images/profile_user.jpg" class="img-fluid" alt="user-image">
@@ -57,8 +57,8 @@
                   <user-menu @closeMenu="closeMenu()"/>
                 </div>
             </li>
-            <li class="nav-item ms-3 ms-lg-0" v-if="getUserDeatils.userName ">
-                <h6 class="fw-bold">{{getUserDeatils.userName ? getUserDeatils.userName : ''}}</h6>
+            <li class="nav-item ms-3 ms-lg-0" v-if="getUserDeatils?.userName ">
+                <h6 class="fw-bold">{{getUserDeatils?.userName ? getUserDeatils?.userName : ''}}</h6>
             </li>
           </ul>
         </div>
@@ -69,11 +69,7 @@
       <div class="container">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0 w-100 justify-content-center">
           <li class="categories-item ms-lg-2 mt-1 mt-lg-0 fw-bold" v-for="(item, index) in categories" :key="index" >
-            <router-link
-              :to="`/${item.routeName}`"
-              class="nav-link"
-              @click="setRoute()"
-            >
+            <router-link :to="`/${item.routeName}`" class="nav-link" @click="setRoute()">
               {{ item.name }}
             </router-link>
           </li>
@@ -140,7 +136,12 @@ export default defineComponent({
       return productStore.getters.getCart.length;
     },
     getUserDeatils() {
-      return store.getters.getUserDeatils
+      if(localStorage.hasOwnProperty('userInfo')){
+        const user = localStorage.getItem("userInfo")
+        if(user) {
+          return JSON.parse(user)
+        }
+      }
     }
   },
 });

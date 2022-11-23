@@ -4,7 +4,7 @@ import PageNotFound from '@/components/page-not-found.vue'
 import productRoute from '@/product/route/product.route'
 import RegistrationContainer from '@/components/registration/registration-container/registration.container.vue'
 import auth  from '@/resuse-function/authntication'
-const { isUserLogin } = auth();
+const { isUserLogin ,isUserNotLogin } = auth();
 
 //Appcell routing
 const appCellRoute = [
@@ -57,7 +57,8 @@ const routes: Array<RouteRecordRaw> = [
   {
     path:'/login',
     name:'login',
-    component:() => import(/* webpackChunkName: "loginUSer" */ "@/components/login/login-container/login.container.vue")
+    component:() => import(/* webpackChunkName: "loginUSer" */ "@/components/login/login-container/login.container.vue"),
+    beforeEnter:isUserNotLogin
   }
   // { path: "/:pathMatch(.*)*", name: "PageNotFound", component: PageNotFound },
 ]

@@ -1,6 +1,7 @@
 <template>
 <!-- product-card-start -->
   <div class="card position-relative p-2 h-100">
+    <!-- cart-favourite-icons-start -->
     <div class="icons position-absolute cart-icons">
       <span class="icon-delete" @click="removeItemFromCart(item.id)" v-if="isCartView ? true : false">
       </span>
@@ -12,13 +13,15 @@
        :class="[getFavouriteItems.includes(item?.id) ? 'icon-heart1 text-danger' : 'icon-heart']" 
        :title="[getFavouriteItems.includes(item?.id) ? 'Already in favourite' : 'Add to favourite']" @click="addTOfaviourite(item.id)"></span>
     </div>
-    <!-- product-image -->
+    <!-- cart-favourite-icons-end -->
+    <!-- product-image-start -->
     <div class="image-wrapper overflow-hidden d-flex align-items-center justify-content-center">
       <figure class="mb-0 d-flex justify-content-center card-image">
         <img :src="require(`../assets/product-images/${item.image}`)" class="img-fluid" :alt="item.image" />
       </figure>
     </div>
-
+    <!-- product-image-end -->
+    <!-- card-body-start -->
     <div class="card-body d-flex flex-column justify-content-between">
       <div class="d-flex justify-content-between">
         <div class="product-details">
@@ -38,6 +41,7 @@
         <button class="btn btn-primary" @click="getCheckout(item.id)">Buy Now</button>
       </div>
     </div>
+    <!-- card-body-end -->
   </div>
 <!-- product-card-end -->
 </template>

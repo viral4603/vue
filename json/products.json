@@ -143,6 +143,18 @@
       "brand": "MRF",
       "category": "sports-books-and-more",
       "image": "book.webp"
+    },
+    {
+      "id": 13,
+      "title": "iPhone X",
+      "description": "128 GB ROM | 14.73 cm (5.8 inch) Super Retina HD Display | 12MP + 12MP | 7MP Front Camera | A11 Bionic Chip with 64-bit Architecture",
+      "price": 536,
+      "discountPercentage": 13,
+      "rating": 4.69,
+      "stock": 94,
+      "brand": "Apple",
+      "category": "electronics",
+      "image": "iphonex.jpg"
     }
   ],
   "categories": [
@@ -317,6 +329,59 @@
       "paymentMethod": "gpay",
       "userId": 1,
       "id": 6
+    },
+    {
+      "items": [
+        {
+          "id": 1,
+          "title": "iPhone X",
+          "description": "64 GB ROM | 14.73 cm (5.8 inch) Super Retina HD Display | 12MP + 12MP | 7MP Front Camera | A11 Bionic Chip with 64-bit Architecture",
+          "price": 435,
+          "discountPercentage": 12.96,
+          "rating": 4.69,
+          "stock": 94,
+          "brand": "Apple",
+          "category": "electronics",
+          "sellingPrice": 401,
+          "image": "iphonex.jpg",
+          "quantity": 2,
+          "payAmount": 802
+        },
+        {
+          "id": 2,
+          "title": "iPhone 11",
+          "description": "128 GB ROM | 15.49 cm (6.1 inch) Super Retina XDR Display | 12MP + 12MP | 12MP Front Camera | A15 Bionic Chip Processor",
+          "price": 549,
+          "discountPercentage": 12.96,
+          "rating": 4.69,
+          "stock": 94,
+          "brand": "Apple",
+          "category": "electronics",
+          "sellingPrice": 506,
+          "image": "iphone11.avif",
+          "quantity": 1,
+          "payAmount": 506
+        },
+        {
+          "id": 3,
+          "title": "Study Table",
+          "description": "Material: Particle Board | Configuration: Straight | Height x Width: 76 cm x 110 cm (2 ft 5 in x 3 ft 7 in) | Storage Included",
+          "price": 325,
+          "discountPercentage": 17.9,
+          "rating": 4.69,
+          "stock": 94,
+          "brand": "Nilkamal ",
+          "category": "home-and-furniture",
+          "sellingPrice": 306,
+          "image": "Study_table.webp",
+          "quantity": 1,
+          "payAmount": 306
+        }
+      ],
+      "paymentMethod": "cashOnDelivery",
+      "totalPaybleAmount": 1614,
+      "userId": "",
+      "id": 7
     }
   ],
   "users": [
@@ -332,6 +397,19 @@
       "address": "valsad,gujarat,96001",
       "checkme": true,
       "id": 1
+    },
+    {
+      "name": "mehul",
+      "email": "mehul@gmail.com",
+      "contactNo": "123654879",
+      "gender": "male",
+      "password": "123456",
+      "passwordConfirm": "123456",
+      "country": "1",
+      "state": "1",
+      "address": "valsad,gujarat,96001",
+      "checkme": true,
+      "id": 2
     }
   ]
 }

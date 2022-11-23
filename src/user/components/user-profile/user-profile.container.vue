@@ -18,8 +18,11 @@ export default defineComponent({
         }
     },
     created() {
-       const getUserId = store.getters.getUserDeatils.userId;
-       this.getUserDetails(getUserId)
+       const user = localStorage.getItem("userInfo");
+       if(user) {
+            const userId =  JSON.parse(user).id
+            this.getUserDetails(userId)
+       }
     },
     methods: {
         getUserDetails(id:any){

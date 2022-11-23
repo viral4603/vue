@@ -63,9 +63,9 @@ html,body{
 }
 
 //card-image
-.card-image {
-    max-height: 400px;
-}
 .image-wrapper{
-    height: 340px;
+    height: 200px;
+    .card-image {
+            max-width: 70%;
+    }
 }

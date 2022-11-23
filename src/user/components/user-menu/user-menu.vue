@@ -38,6 +38,7 @@ export default defineComponent({
         userName:''
       }
       store.dispatch('setUser',obj)
+      localStorage.removeItem("userInfo")
       this.$router.push('/login')
     },
     closeMenu() {
